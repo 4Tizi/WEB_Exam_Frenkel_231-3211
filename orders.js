@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 let productNames = {};
 let productCosts = {};
 
-// Загрузка данных товаров
+// Загрузка данных товаров с ожиданием завершения
 function fetchProducts() {
-    fetch('https://edu.std-900.ist.mospolytech.ru/exam-2024-1/api/goods?api_key=e3435f73-86d3-4d73-9303-8b4487a720e2')
+    return fetch('https://edu.std-900.ist.mospolytech.ru/exam-2024-1/api/goods?api_key=e3435f73-86d3-4d73-9303-8b4487a720e2')
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
@@ -23,16 +23,16 @@ function fetchProducts() {
 
 fetchProducts();
 
-// Основная функция для загрузки и отображения заказов
-function initializeOrders() {
-    fetchOrders()
-        .then(orders => {
-            displayOrders(orders);
-        })
-        .catch(error => {
-            console.error('Ошибка при загрузке заказов:', error);
-            showAlert('Не удалось загрузить заказы.');
-        });
+// Загружаем товары и заказы в правильном порядке
+async function initializeOrders() {
+    try {
+        await fetchProducts(); // Ждем загрузки товаров
+        const orders = await fetchOrders(); // Загружаем заказы после загрузки товаров
+        displayOrders(orders);
+    } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+        showAlert('Не удалось загрузить заказы.');
+    }
 }
 
 // Запрос на получение данных заказов
