@@ -288,7 +288,7 @@ function updateDeliveryCost(date, time) {
                 } else {
                     alert(`Заказ успешно оформлен! Номер заказа: ${data.id}.`);
                     localStorage.removeItem('cart');
-                    window.location.href = '/Exam/index.html';
+                    window.location.href = '/index.html';
                 }
             })
             .catch(error => {
