@@ -1,0 +1,37 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif; /* Можно использовать шрифт по вашему выбору */
+    font-size: 2em; /* Размер текста */
+    font-weight: bold;
+    color: #388e3c; /* Цвет текста */
+    text-decoration: none; /* Убирает подчеркивание */
+}
+
+.icons .icon {
+    width: 30px; /* Устанавливаем ширину иконок */
+    height: 30px; /* Устанавливаем высоту иконок */
+    transition: transform 0.3s ease; /* Добавляем плавный эффект увеличения */
+}
+
+.icons .icon:hover {
+    transform: scale(1.2); /* Увеличиваем иконку при наведении */
+}

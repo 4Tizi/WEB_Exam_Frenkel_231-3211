@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная / Френкель Владислав 231-3211</title>
+    <link rel="shortcut icon" type="image/jpg" href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" class="logo">VFShop</a>
+            </a>
+            <div class="search">
+                <form>
+                    <input type="text" id="searchInput" placeholder="Введите запрос">
+                    <button type="submit" id="searchButton">Найти</button>
+                </form>
+                <ul id="autocompleteList" class="autocomplete-list hidden"></ul>
+            </div>
+            <div class="icons">
+                <a class="action-btn" style="padding-right:10px;" title="Корзина" href="cart.html">
+                    <img src="cart.svg" alt="Eye" class="icon"></a>
+                <a class="action-btn" title="Личный кабинет" href="orders.html"><img
+                        src="proile.svg" alt="Eye" class="icon"></a>
+            </div>
+        </div>
+    </header>
+    <div id="notification" class="notification hidden">
+        <p id="notification-text"></p>
+        <button id="notification-button">Окей</button>
+    </div>
+    <main>
+        <div class="content">
+            <!-- Сайдбар для фильтрации товаров -->
+            <aside class="sidebar">
+                <form class="filter-form">
+                    <h3>Фильтр товаров</h3>
+
+                    <div class="filter-section">
+                        <h4>Категория товара</h4>
+                        <label><input type="checkbox" name="category" value="home & kitchen">Дом & Кухня</label><br>
+                        <label><input type="checkbox" name="category" value="tv, audio & cameras">ТВ, аудио & камеры</label><br>
+                        <label><input type="checkbox" name="category" value="sports & fitness">Спорт & Фитнес</label><br>
+                        <label><input type="checkbox" name="category" value="beauty & health">Красота & Здоровье</label><br>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Стоимость</h4>
+                        <label>От: <input type="number" name="price_from" min="0" step="100" value="100"></label>
+                        <label>До: <input type="number" name="price_to" min="0" step="100" value="5000"></label>
+                    </div>
+
+                    <div class="filter-section">
+                        <label><input type="checkbox" name="discount"> Только товары со скидками</label>
+                    </div>
+
+                    <button type="submit" class="apply-button">Применить</button>
+                </form>
+            </aside>
+
+            <!-- Блок с каталогом товаров -->
+            <section class="catalog">
+                <div class="catalog-header">
+                    <h2>Каталог</h2>
+
+                    <select id="sort" name="sort" onchange="changeSortOrder()">
+                        <option value="popularity-asc">По убыванию рейтинга</option>
+                        <option value="popularity-desc">По возрастанию рейтинга</option>
+                        <option value="price-asc">По убыванию цены</option>
+                        <option value="price-desc">По возрастанию цены</option>
+                    </select>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Карточки товаров -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Телефон: +7-000-000-00-00</p>
+            <p>© 2025 Название магазина. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

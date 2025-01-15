@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина / Френкель Владислав 231-3211</title>
+    <link rel="shortcut icon" type="image/jpg" href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" class="logo">VFShop</a>
+            </a>
+            <div class="icons">
+                <a class=" action-btn" style="padding-right:10px;" title="Корзина" href="cart.html">
+                    <img src="cart.svg" alt="Eye" class="icon"></a>
+                <a class="action-btn" title="Личный кабинет" href="orders.html"><img
+                        src="proile.svg" alt="Eye" class="icon"></a>
+            </div>
+        </div>
+    </header>
+    <div id="notification" class="notification hidden">
+        <p id="notification-text"></p>
+        <button id="notification-button">Окей</button>
+    </div>
+    <main>
+        <div class="cart-items"></div> <!-- Здесь будут отображаться товары из корзины -->
+
+        <div class="form-container">
+            <h2>Оформление заказа</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" placeholder="Иванов Иван" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" placeholder="+74952230523" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@mospolytech.ru" required>
+                    <div class="checkbox-group">
+                        <label for="subscribe">Подписаться на рассылку</label>
+                        <input type="checkbox" id="subscribe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment">Комментарий</label>
+                    <textarea id="comment" placeholder="Ваш комментарий"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" placeholder="ул. Большая Семёновская, 38" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Дата доставки</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Временной интервал доставки</label>
+                    <select id="time" required>
+                        <option value="">Выберите</option>
+                        <option value="08:00-12:00">08:00-12:00</option>
+                        <option value="12:00-14:00">12:00-14:00</option>
+                        <option value="14:00-18:00">14:00-18:00</option>
+                        <option value="18:00-22:00">18:00-22:00</option>
+                    </select>
+                </div>
+
+                <div class="form-group total"></div> <!-- Здесь будет отображаться общая сумма корзины -->
+
+                <div class="form-buttons">
+                    <button type="reset" class="reset-btn">Сбросить</button>
+                    <button type="submit" id="order-form" class="submit-btn">Оформить</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Телефон: +7-000-000-00-00</p>
+            <p>© 2025 Название магазина. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
